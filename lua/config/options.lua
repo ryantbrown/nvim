@@ -30,7 +30,7 @@ opt.splitbelow = true
 
 -- Visual
 opt.showmode = false
-opt.list = true
+opt.list = false
 opt.listchars = { tab = ">_", trail = "·", nbsp = "+" }
 opt.termguicolors = true
 opt.background = "dark"
