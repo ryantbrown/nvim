@@ -7,11 +7,11 @@ return {
       "echasnovski/mini.icons",
       "MunifTanjim/nui.nvim",
     },
-    config = function ()
+    config = function()
       require("neo-tree").setup({
         default_component_configs = {
           container = {
-            enable_character_fade = true
+            enable_character_fade = true,
           },
           indent = {
             indent_size = 1,
@@ -29,17 +29,17 @@ return {
           },
           git_status = {
             symbols = {
-              added     = "",
-              modified  = "",
-              deleted   = "✖",
-              renamed   = "󰁕",
+              added = "",
+              modified = "",
+              deleted = "✖",
+              renamed = "󰁕",
 
-              untracked = "",
-              ignored   = "",
-              unstaged  = "󰄱",
-              staged    = "",
-              conflict  = "",
-            }
+              untracked = "[u]",
+              ignored = "[i]",
+              unstaged = "[ ]",
+              staged = "[s]",
+              conflict = "[c]",
+            },
           },
           file_size = { enabled = false },
           type = { enabled = false },
@@ -54,7 +54,7 @@ return {
             hide_gitignored = true,
             hide_hidden = true,
             hide_by_name = {
-              "node_modules"
+              "node_modules",
             },
             hide_by_pattern = {
               --"*.meta",
@@ -68,7 +68,7 @@ return {
             },
             never_show = {
               ".DS_Store",
-              "thumbs.db"
+              "thumbs.db",
             },
             never_show_by_pattern = {
               --".null-ls_*",
@@ -86,6 +86,6 @@ return {
           },
         },
       })
-    end
+    end,
   },
 }

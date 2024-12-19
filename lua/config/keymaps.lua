@@ -50,7 +50,7 @@ map("n", "<leader>cD", vim.lsp.buf.declaration, { desc = "Goto declaration" })
 map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename symbol" })
 map("n", "<leader>ck", vim.lsp.buf.hover, { desc = "Show documentation" })
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
-map("n", "<leader>cR", ":LspRestart<CR>", { desc = "Restart LSP" })
+map("n", "<leader>cR", ":LspRestart<cr>", { desc = "Restart LSP" })
 
 -- Diagnostics
 map("n", "<leader>df", ":Telescope diagnostics bufnr=0<cr>", { desc = "File diagnostics" })

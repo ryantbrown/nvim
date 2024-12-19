@@ -39,7 +39,6 @@ return {
         ["<cr>"] = cmp.mapping.confirm({ select = false }),
       }),
       sources = cmp.config.sources({
-        { name = "copilot", group_index = 1 },
         { name = "nvim_lsp", group_index = 2 },
         { name = "buffer", group_index = 2 },
         { name = "path", group_index = 2 },
@@ -49,7 +48,6 @@ return {
         format = lspkind.cmp_format({
           maxwidth = 50,
           ellipsis_char = "...",
-          symbol_map = { Copilot = "" },
         }),
       },
     })
