@@ -13,14 +13,15 @@ return {
     build = ":TSUpdate",
     cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
     dependencies = {
-      "windwp/nvim-ts-autotag", 
-      "nvim-treesitter/nvim-treesitter-textobjects"
+      "windwp/nvim-ts-autotag",
+      "nvim-treesitter/nvim-treesitter-textobjects",
     },
     keys = {
       { "<c-space>", desc = "Increment Selection" },
       { "<bs>", desc = "Decrement Selection", mode = "x" },
     },
     config = function()
+      ---@diagnostic disable-next-line: missing-fields
       require("nvim-treesitter.configs").setup({
         indent = { enable = true },
         highlight = { enable = true },
@@ -44,6 +45,7 @@ return {
           "regex",
           "javascript",
           "typescript",
+          "tsx",
           "markdown",
           "markdown_inline",
         },
