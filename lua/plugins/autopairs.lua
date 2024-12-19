@@ -12,13 +12,6 @@ return {
         javascript = { "template_string" },
         java = false,
       },
-      fast_wrap = {
-        map = '<Tab>',
-        chars = { '{', '[', '(', '"', "'" },
-        pattern = [=[[%'%"%>%]%)%}%,]]=],
-        end_key = '$',
-        keys = 'qwertyuiopzxcvbnmasdfghjkl',
-      },
     })
 
     local cmp = require("cmp")
@@ -27,4 +20,3 @@ return {
     cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
   end,
 }
-
