@@ -50,7 +50,7 @@ map("n", "<leader>cD", vim.lsp.buf.declaration, { desc = "Goto declaration" })
 map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename symbol" })
 map("n", "<leader>ck", vim.lsp.buf.hover, { desc = "Show documentation" })
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
-map("n", "<leader>cR", ":LspRestart<cr>", { desc = "Restart LSP" })
+map("n", "<leader>cR", ":LspRestart<CR>", { desc = "Restart LSP" })
 
 -- Diagnostics
 map("n", "<leader>df", ":Telescope diagnostics bufnr=0<cr>", { desc = "File diagnostics" })
@@ -65,18 +65,6 @@ map("i", "<M-j>", "<Esc>:m .+1<cr>==gi", { desc = "Move down" })
 map("i", "<M-k>", "<Esc>:m .-2<cr>==gi", { desc = "Move up" })
 map("v", "<M-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
 map("v", "<M-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
-
--- Window focus
-map("n", "<C-h>", "<C-w>h", { desc = "Focus left", remap = true })
-map("n", "<C-j>", "<C-w>j", { desc = "Focus lower", remap = true })
-map("n", "<C-k>", "<C-w>k", { desc = "Focus upper", remap = true })
-map("n", "<C-l>", "<C-w>l", { desc = "Focus right", remap = true })
-
--- Window management
-map("n", "<leader>wd", "<C-W>c", { desc = "Delete window", remap = true })
-map("n", "<leader>w-", "<C-W>s", { desc = "Split below", remap = true })
-map("n", "<leader>w\\", "<C-W>v", { desc = "Split right", remap = true })
-map("n", "<leader>w=", "<C-W>=", { desc = "Balance windows", remap = true })
 
 -- Tabs
 map("n", "<leader>tl", "<cmd>tablast<cr>", { desc = "Last tab" })

@@ -1,19 +1,18 @@
 return {
   "yetone/avante.nvim",
+  enable = false,
   event = "VeryLazy",
   lazy = false,
-  version = false, -- set this if you want to always pull the latest change
-  opts = {
-    -- add any opts here
-  },
+  version = false,
+  opts = {},
   build = "make",
   dependencies = {
     "stevearc/dressing.nvim",
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
-    "hrsh7th/nvim-cmp",
+    -- "hrsh7th/nvim-cmp",
     "nvim-tree/nvim-web-devicons",
-    "zbirenbaum/copilot.lua",
+    "github/copilot.lua",
     {
       "HakonHarnes/img-clip.nvim",
       event = "VeryLazy",
@@ -24,13 +23,11 @@ return {
           drag_and_drop = {
             insert_mode = true,
           },
-          -- required for Windows users
           use_absolute_path = true,
         },
       },
     },
     {
-      -- Make sure to set this up properly if you have lazy=true
       "MeanderingProgrammer/render-markdown.nvim",
       opts = {
         file_types = { "markdown", "Avante" },

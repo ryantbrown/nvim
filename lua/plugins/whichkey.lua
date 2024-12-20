@@ -5,7 +5,6 @@ return {
       return ctx.plugin and 0 or 500
     end,
     spec = {
-      { "<leader>w", group = "Window" },
       { "<leader>t", group = "Tab" },
       { "<leader>f", group = "File" },
       { "<leader>b", group = "Buffer" },

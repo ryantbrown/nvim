@@ -10,6 +10,7 @@ opt.smartindent = true
 opt.showtabline = 0
 opt.laststatus = 0
 
+opt.cmdheight = 0
 -- Line numbers
 opt.number = true
 opt.relativenumber = true

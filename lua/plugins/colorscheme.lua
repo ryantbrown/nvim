@@ -4,10 +4,10 @@ return {
   config = function()
     local colors = require("config.colors")
 
+    ---@diagnostic disable-next-line: missing-fields
     require("tokyonight").setup({
       style = "moon",
       on_colors = function(theme)
-
         -- Background
         theme.bg = colors.bg
         theme.bg_dark = colors.bg
@@ -26,8 +26,9 @@ return {
         theme.fg = colors.fg
         theme.fg_dark = colors.fg
         theme.fg_float = colors.fg
-        theme.fg_gutter = colors.fg
-        theme.fg_sidebar = colors.fg
+        theme.fg_gutter = colors.comment
+        theme.fg_sidebar = colors.gray
+        theme.comment = colors.comment
       end,
     })
 
@@ -35,8 +36,7 @@ return {
 
     vim.api.nvim_set_hl(0, "PmenuSel", {
       bg = colors.bg_highlight,
-      bold = true
+      bold = true,
     })
-
   end,
 }
