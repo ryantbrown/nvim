@@ -2,6 +2,7 @@ require("config.options")
 require("config.keymaps")
 require("config.autocmds")
 require("config.lazy")
+require("config.mindful").setup()
 
 ---@diagnostic disable-next-line: missing-fields
 require("lazy").setup({ { import = "plugins" } }, {

@@ -1,6 +1,6 @@
 return {
   "yetone/avante.nvim",
-  enable = false,
+  enabled = false,
   event = "VeryLazy",
   lazy = false,
   version = false,
@@ -10,9 +10,6 @@ return {
     "stevearc/dressing.nvim",
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
-    -- "hrsh7th/nvim-cmp",
-    "nvim-tree/nvim-web-devicons",
-    "github/copilot.lua",
     {
       "HakonHarnes/img-clip.nvim",
       event = "VeryLazy",

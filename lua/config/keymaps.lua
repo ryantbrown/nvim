@@ -9,7 +9,7 @@ local map = function(mode, lhs, rhs, opts)
   vim.keymap.set(mode, lhs, rhs, opts)
 end
 
--- Exit insert mode
+-- Normal mode
 map("i", "jk", "<ESC>", { desc = "Normal mode" })
 
 -- Save
@@ -18,53 +18,56 @@ map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 -- Quit all
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
 
+-- Zen mode
+map("n", "<leader>zz", "<cmd>Mindful<cr>", { desc = "Mindful mode" })
+
 -- Neotree
-map("n", "<leader>ee", ":Neotree toggle left<cr>", { desc = "Toggle tree" })
-map("n", "<leader>ef", ":Neotree float<cr>", { desc = "Floating tree" })
-map("n", "<leader>er", ":Neotree reveal left<cr>", { desc = "Reveal tree" })
+map("n", "<leader>ee", "<cmd>Neotree toggle left<cr>", { desc = "Toggle tree" })
+map("n", "<leader>ef", "<cmd>Neotree float<cr>", { desc = "Floating tree" })
+map("n", "<leader>er", "<cmd>Neotree reveal left<cr>", { desc = "Reveal tree" })
 
 -- Session
 map("n", "<leader>ps", "<cmd>SessionSave<cr>", { desc = "Save session" })
 map("n", "<leader>pr", "<cmd>SessionRestore<cr>", { desc = "Restore session" })
 
 -- Telescope
-map("n", "<leader>ff", ":Telescope find_files<cr>", { desc = "Find files" })
-map("n", "<leader>fg", ":Telescope live_grep<cr>", { desc = "Live grep" })
-map("n", "<leader>fr", ":Telescope oldfiles<cr>", { desc = "Find recent files" })
-map("n", "<leader>fc", ":Telescope grep_string<cr>", { desc = "Find string" })
-map("n", "<leader>fc", ":TodoTelescope<cr>", { desc = "Find todos" })
+map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
+map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Live grep" })
+map("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Find recent files" })
+map("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string" })
+map("n", "<leader>fc", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 
 -- Buffers
-map("n", "<leader>bn", ":bnext<cr>", { desc = "Next buffer" })
-map("n", "<leader>bN", ":bprevious<cr>", { desc = "Prev buffer" })
-map("n", "<leader>bb", ":e #<cr>", { desc = "Other buffer" })
-map("n", "<leader>bx", ":bd<cr>", { desc = "Delete window" })
-map("n", "<leader>bf", ":Telescope buffers<cr>", { desc = "Find buffers" })
+map("n", "<leader>bn", "<cmd>bnext<cr>", { desc = "Next buffer" })
+map("n", "<leader>bN", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
+map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Other buffer" })
+map("n", "<leader>bx", "<cmd>bd<cr>", { desc = "Delete window" })
+map("n", "<leader>bf", "<cmd>Telescope buffers<cr>", { desc = "Find buffers" })
 
 -- Code & LSP
-map("n", "<leader>cr", ":Telescope lsp_references<cr>", { desc = "Find references" })
-map("n", "<leader>cd", ":Telescope lsp_definitions<cr>", { desc = "Find definitions" })
-map("n", "<leader>ct", ":Telescope lsp_type_definitions<cr>", { desc = "Find types" })
-map("n", "<leader>ci", ":Telescope lsp_implementations<cr>", { desc = "Find implementations" })
+map("n", "<leader>cr", "<cmd>Telescope lsp_references<cr>", { desc = "Find references" })
+map("n", "<leader>cd", "<cmd>Telescope lsp_definitions<cr>", { desc = "Find definitions" })
+map("n", "<leader>ct", "<cmd>Telescope lsp_type_definitions<cr>", { desc = "Find types" })
+map("n", "<leader>ci", "<cmd>Telescope lsp_implementations<cr>", { desc = "Find implementations" })
 map("n", "<leader>cD", vim.lsp.buf.declaration, { desc = "Goto declaration" })
 map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename symbol" })
 map("n", "<leader>ck", vim.lsp.buf.hover, { desc = "Show documentation" })
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
-map("n", "<leader>cR", ":LspRestart<CR>", { desc = "Restart LSP" })
+map("n", "<leader>cR", "<cmd>LspRestart<CR>", { desc = "Restart LSP" })
 
 -- Diagnostics
-map("n", "<leader>df", ":Telescope diagnostics bufnr=0<cr>", { desc = "File diagnostics" })
+map("n", "<leader>df", "<cmd>Telescope diagnostics bufnr=0<cr>", { desc = "File diagnostics" })
 map("n", "<leader>dl", vim.diagnostic.open_float, { desc = "Line diagnostics" })
 map("n", "<leader>d]", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
 map("n", "<leader>d[", vim.diagnostic.goto_prev, { desc = "Prev diagnostic" })
 
 -- Move lines
-map("n", "<M-j>", ":m .+1<cr>==", { desc = "Move down" })
-map("n", "<M-k>", ":m .-2<cr>==", { desc = "Move up" })
-map("i", "<M-j>", "<Esc>:m .+1<cr>==gi", { desc = "Move down" })
-map("i", "<M-k>", "<Esc>:m .-2<cr>==gi", { desc = "Move up" })
-map("v", "<M-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
-map("v", "<M-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
+map("n", "<M-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
+map("n", "<M-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
+map("i", "<M-j>", "<Esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
+map("i", "<M-k>", "<Esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
+map("v", "<M-j>", "<cmd>m '>+1<cr>gv=gv", { desc = "Move down" })
+map("v", "<M-k>", "<cmd>m '<-2<cr>gv=gv", { desc = "Move up" })
 
 -- Tabs
 map("n", "<leader>tl", "<cmd>tablast<cr>", { desc = "Last tab" })
