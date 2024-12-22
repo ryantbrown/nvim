@@ -9,7 +9,6 @@ return {
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
-
     telescope.load_extension("ui-select")
     telescope.load_extension("fzf")
 

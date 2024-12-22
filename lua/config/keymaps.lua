@@ -26,16 +26,19 @@ map("n", "<leader>ee", "<cmd>Neotree toggle left<cr>", { desc = "Toggle tree" })
 map("n", "<leader>ef", "<cmd>Neotree float<cr>", { desc = "Floating tree" })
 map("n", "<leader>er", "<cmd>Neotree reveal left<cr>", { desc = "Reveal tree" })
 
--- Session
+-- Project (session)
 map("n", "<leader>ps", "<cmd>SessionSave<cr>", { desc = "Save session" })
 map("n", "<leader>pr", "<cmd>SessionRestore<cr>", { desc = "Restore session" })
 
--- Telescope
+-- Files
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
 map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Live grep" })
 map("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Find recent files" })
 map("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string" })
-map("n", "<leader>fc", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
+map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
+
+-- Copy & paste
+map("n", "<leader>fR", "<cmd>Telescope registers<cr>", { desc = "Find registers" })
 
 -- Buffers
 map("n", "<leader>bn", "<cmd>bnext<cr>", { desc = "Next buffer" })
@@ -49,6 +52,8 @@ map("n", "<leader>cr", "<cmd>Telescope lsp_references<cr>", { desc = "Find refer
 map("n", "<leader>cd", "<cmd>Telescope lsp_definitions<cr>", { desc = "Find definitions" })
 map("n", "<leader>ct", "<cmd>Telescope lsp_type_definitions<cr>", { desc = "Find types" })
 map("n", "<leader>ci", "<cmd>Telescope lsp_implementations<cr>", { desc = "Find implementations" })
+map("n", "<leader>cs", "<cmd>Telescope lsp_document_symbols<cr>", { desc = "Find symbols" })
+map("n", "<leader>cS", "<cmd>Telescope lsp_workspace_symbols<cr>", { desc = "Global symbols" })
 map("n", "<leader>cD", vim.lsp.buf.declaration, { desc = "Goto declaration" })
 map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename symbol" })
 map("n", "<leader>ck", vim.lsp.buf.hover, { desc = "Show documentation" })
@@ -68,6 +73,10 @@ map("i", "<M-j>", "<Esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
 map("i", "<M-k>", "<Esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
 map("v", "<M-j>", "<cmd>m '>+1<cr>gv=gv", { desc = "Move down" })
 map("v", "<M-k>", "<cmd>m '<-2<cr>gv=gv", { desc = "Move up" })
+
+-- Window
+map("n", "<M-l>", ":vertical resize -5<cr>", { desc = "Resize left" })
+map("n", "<M-h>", ":vertical resize +5<cr>", { desc = "Resize right" })
 
 -- Tabs
 map("n", "<leader>tl", "<cmd>tablast<cr>", { desc = "Last tab" })

@@ -38,5 +38,19 @@ return {
       bg = colors.bg_highlight,
       bold = true,
     })
+    vim.api.nvim_set_hl(0, "Folded", {
+      bg = colors.bg_highlight,
+      fg = colors.gray,
+      bold = true,
+    })
+    vim.api.nvim_set_hl(0, "FoldedColumn", {
+      bg = colors.bg_highlight,
+      fg = colors.gray,
+      bold = true,
+    })
+    vim.api.nvim_set_hl(0, "LualineSeparator", {
+      bg = colors.bg,
+      fg = colors.bg_highlight,
+    })
   end,
 }

@@ -41,7 +41,9 @@ opt.wrap = false
 -- Interaction
 opt.mouse = "a"
 opt.foldlevel = 99
+opt.foldmethod = "expr"
 opt.backspace = "indent,eol,start"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.clipboard:append("unnamedplus")
 
 -- Plugin specific

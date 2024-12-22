@@ -22,7 +22,7 @@ return {
 
     cmp.setup({
       completion = {
-        completeopt = "menu,menuone,preview,noselect",
+        completeopt = "menu,menuone,noinsert",
       },
       snippet = {
         expand = function(args)
