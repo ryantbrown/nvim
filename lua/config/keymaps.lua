@@ -18,8 +18,8 @@ map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 -- Quit all
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
 
--- Zen mode
-map("n", "<leader>zz", "<cmd>Mindful<cr>", { desc = "Mindful mode" })
+-- Center
+map("n", "<leader>zz", "<cmd>NoNeckPain<cr>", { desc = "Center buffer" })
 
 -- Neotree
 map("n", "<leader>ee", "<cmd>Neotree toggle left<cr>", { desc = "Toggle tree" })
@@ -81,13 +81,13 @@ map("n", "<M-l>", ":vertical resize -5<cr>", { desc = "Resize left" })
 map("n", "<M-h>", ":vertical resize +5<cr>", { desc = "Resize right" })
 
 -- Tabs
-map("n", "<leader>tl", "<cmd>tablast<cr>", { desc = "Last tab" })
-map("n", "<leader>to", "<cmd>tabonly<cr>", { desc = "Close other tabs" })
-map("n", "<leader>tf", "<cmd>tabfirst<cr>", { desc = "First tab" })
-map("n", "<leader>tt", "<cmd>tabnew<cr>", { desc = "New tab" })
-map("n", "<leader>tn", "<cmd>tabnext<cr>", { desc = "Next tab" })
-map("n", "<leader>tx", "<cmd>tabclose<cr>", { desc = "Close tab" })
-map("n", "<leader>tN", "<cmd>tabprevious<cr>", { desc = "Prev tab" })
+-- map("n", "<leader>tl", "<cmd>tablast<cr>", { desc = "Last tab" })
+-- map("n", "<leader>to", "<cmd>tabonly<cr>", { desc = "Close other tabs" })
+-- map("n", "<leader>tf", "<cmd>tabfirst<cr>", { desc = "First tab" })
+-- map("n", "<leader>tt", "<cmd>tabnew<cr>", { desc = "New tab" })
+-- map("n", "<leader>tn", "<cmd>tabnext<cr>", { desc = "Next tab" })
+-- map("n", "<leader>tx", "<cmd>tabclose<cr>", { desc = "Close tab" })
+-- map("n", "<leader>tN", "<cmd>tabprevious<cr>", { desc = "Prev tab" })
 
 -- Search
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Clear highlights" })
