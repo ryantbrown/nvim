@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     local filetype = vim.bo.filetype
 
     vim.schedule(function()
-      os.execute("biome lint --fix '" .. filepath .. "'")
+      os.execute("biome lint --fix '" .. filepath .. "'" .. " > /dev/null 2>&1")
       vim.cmd("noautocmd edit!")
       vim.fn.winrestview(view)
 
