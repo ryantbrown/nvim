@@ -11,6 +11,26 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
 })
 
+-- Try to lint on save
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "*",
+  callback = function()
+    local filepath = vim.api.nvim_buf_get_name(0)
+    local view = vim.fn.winsaveview()
+    local filetype = vim.bo.filetype
+
+    vim.schedule(function()
+      os.execute("biome lint --fix '" .. filepath .. "'")
+      vim.cmd("noautocmd edit!")
+      vim.fn.winrestview(view)
+
+      vim.bo.filetype = filetype
+      vim.cmd("syntax enable")
+      vim.cmd("redraw!")
+    end)
+  end,
+})
+
 -- Highlight when yanking text
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking text",

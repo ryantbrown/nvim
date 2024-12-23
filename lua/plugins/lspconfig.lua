@@ -30,6 +30,24 @@ return {
           capabilities = capabilities,
         })
       end,
+      ["tailwindcss"] = function()
+        lspconfig.tailwindcss.setup({
+          settings = {
+            tailwindCSS = {
+              experimental = {
+                classRegex = {
+                  {
+                    "cn\\(([^)]*)\\)",
+                    "(?:'|\")([^']*)(?:'|\")",
+                    "([\"'`][^\"'`]*.*?[\"'`])",
+                    "[\"'`]([^\"'`]*).*?[\"'`]",
+                  },
+                },
+              },
+            },
+          },
+        })
+      end,
       ["lua_ls"] = function()
         lspconfig["lua_ls"].setup({
           capabilities = capabilities,
